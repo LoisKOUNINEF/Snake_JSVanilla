@@ -15,7 +15,7 @@ function main(currentTime) {
     return
   };
 
-  window.requestAnimato)nFrame(main)
+  window.requestAnimationFrame(main)
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
   if (secondsSinceLastRender < 1 / snakeSpeed)
     return
