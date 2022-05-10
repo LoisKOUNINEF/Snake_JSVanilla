@@ -10,12 +10,12 @@ const gameBoard = document.getElementById('game-board')
 function main(currentTime) {
   if (gameOver) {
     if (confirm('You lost. Press OK to retry !')) {
-      window.location.assign'https://loiskouninef.github.io/Snake_JSVanilla/';
+      window.location.assign('https://loiskouninef.github.io/Snake_JSVanilla/');
     }
     return
   };
 
-  window.requestAnimationFrame(main)
+  window.requestAnimato)nFrame(main)
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
   if (secondsSinceLastRender < 1 / snakeSpeed)
     return
