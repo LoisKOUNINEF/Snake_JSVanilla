@@ -1,5 +1,3 @@
-const touchableElement = document.querySelector('body')
-
 let inputDirection = { x: 0, y: 0 }
 let lastInputDirection = { x: 0, y: 0 }
 
@@ -18,6 +16,8 @@ function keyboardControls(e) {  switch (e.key) {
   moveRight()
   break
 }}
+
+
 
 function touchControls() {
   if (touchendX < touchstartX) {
@@ -60,12 +60,12 @@ function moveDown() {
 
 window.addEventListener('keydown', keyboardControls);
 
-touchableElement.addEventListener('touchstart', function (event) {
+window.addEventListener('touchstart', function (event) {
   touchstartX = event.changedTouches[0].screenX;
   touchstartY = event.changedTouches[0].screenY;
 }, false);
 
-touchableElement.addEventListener('touchend', function (event) {
+window.addEventListener('touchend', function (event) {
   touchendX = event.changedTouches[0].screenX;
   touchendY = event.changedTouches[0].screenY;
   touchControls();
