@@ -8,7 +8,7 @@
 
 - Score display
 - Increase speed every 10 food eaten
+- Best Score with LocalStorage
 
 ### Features to add :
-- Best Score with LocalStorage
 - Touch Events
