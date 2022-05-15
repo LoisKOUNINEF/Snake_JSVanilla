@@ -61,11 +61,15 @@ function addSegment() {
     // snakeBody[snakeBody.length] = { ...snakeBody[snakeBody.length - 1]}
     score ++
     scoreCount ++
-    scoreDisplay.textContent = score
+    if (score < 10) {
+      scoreDisplay.textContent = "0" + score
+    }
+    else {
+      scoreDisplay.textContent = score
+    }
     if (scoreCount === 10) {
       snakeSpeed += 2
       scoreCount = 0
-      console.log(snakeSpeed)
     }
   }
   newSegment = 0
