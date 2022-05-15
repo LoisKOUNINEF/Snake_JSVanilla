@@ -1,6 +1,10 @@
 import { getInputDirection } from './input.js'
+const scoreDisplay = document.getElementById('score')
 
-export const snakeSpeed = 5
+let score = 0;
+let scoreCount = 0;
+
+export let snakeSpeed = 5
 
 let result = 0
 let newSegment = 0
@@ -34,7 +38,7 @@ export function expandSnake(amount) {
 export function onSnake(position, { ignoreHead = false } = {}) {
   return snakeBody.some((segment, index) => {
     if (ignoreHead && index === 0) return false
-    return equalPositions(segment, position)
+      return equalPositions(segment, position)
   })
 }
 
@@ -55,6 +59,14 @@ function addSegment() {
     snakeBody.push({ ...snakeBody[snakeBody.length - 1]})
     // equivalent to
     // snakeBody[snakeBody.length] = { ...snakeBody[snakeBody.length - 1]}
+    score ++
+    scoreCount ++
+    scoreDisplay.textContent = score
+    if (scoreCount === 10) {
+      snakeSpeed += 2
+      scoreCount = 0
+      console.log(snakeSpeed)
+    }
   }
   newSegment = 0
 }
