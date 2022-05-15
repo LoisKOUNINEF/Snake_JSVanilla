@@ -1,10 +1,5 @@
 import { getInputDirection } from './input.js'
-const scoreDisplay = document.getElementById('score')
-
-let score = 0;
-let scoreCount = 0;
-
-export let snakeSpeed = 5
+import score from './score.js'
 
 let result = 0
 let newSegment = 0
@@ -59,18 +54,7 @@ function addSegment() {
     snakeBody.push({ ...snakeBody[snakeBody.length - 1]})
     // equivalent to
     // snakeBody[snakeBody.length] = { ...snakeBody[snakeBody.length - 1]}
-    score ++
-    scoreCount ++
-    if (score < 10) {
-      scoreDisplay.textContent = "0" + score
-    }
-    else {
-      scoreDisplay.textContent = score
-    }
-    if (scoreCount === 10) {
-      snakeSpeed += 2
-      scoreCount = 0
-    }
+    score()
   }
   newSegment = 0
 }
