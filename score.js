@@ -7,7 +7,7 @@ let currentScore = 0;
 let scoreCount = 0;
 let currentBest = localStorage.bestScore ? JSON.parse(localStorage.bestScore) : 0
 
-function bestScore() {
+function bestScoreConfig() {
   if (currentBest < 10) {
     bestScoreDisplay.textContent = "00" + currentBest
   }
@@ -19,7 +19,7 @@ function bestScore() {
   }
 }
 
-function scoreConfig() {
+function currentScoreConfig() {
   if (currentScore < 10) {
     scoreDisplay.textContent = "00" + currentScore
   }
@@ -37,8 +37,8 @@ function score() {
   if (currentScore > currentBest) {
     currentBest = currentScore
   }
-  scoreConfig()
-  bestScore()
+  currentScoreConfig()
+  bestScoreConfig()
   localStorage.setItem("bestScore", JSON.stringify(currentBest))
   if (scoreCount === 10) {
     snakeSpeed += 2
@@ -46,7 +46,7 @@ function score() {
   }
 }
 
-bestScore()
-scoreConfig()
+bestScoreConfig()
+currentScoreConfig()
 
 export default score
