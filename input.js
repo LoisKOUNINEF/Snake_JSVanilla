@@ -1,6 +1,30 @@
 let inputDirection = { x: 0, y: 0 }
 let lastInputDirection = { x: 0, y: 0 }
 
+let touchstartX = 0
+let touchendX = 0
+let touchstartY = 0
+let touchendY = 0
+
+const slider = document.querySelector('body')
+
+function handleGesture() {
+  if (touchendX < touchstartX) moveLeft();
+  if (touchendX > touchstartX) moveRight();
+  if (touchendY < touchstartY) moveUp();
+  if (touchendY > touchstartY) moveDown();
+}
+
+slider.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+  touchstartY = e.changedTouches[0].screenY
+})
+
+slider.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  touchendY = e.changedTouches[0].screenY
+  handleGesture()
+})
 
 function keyboardControls (e) {
   switch (e.key) {
