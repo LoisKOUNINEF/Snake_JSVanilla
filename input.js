@@ -8,7 +8,7 @@ let touchendY = 0
 
 const slider = document.querySelector('body')
 
-function handleGesture() {
+function touchControls() {
   if (touchendX < touchstartX) moveLeft();
   if (touchendX > touchstartX) moveRight();
   if (touchendY < touchstartY) moveUp();
@@ -23,7 +23,7 @@ slider.addEventListener('touchstart', e => {
 slider.addEventListener('touchend', e => {
   touchendX = e.changedTouches[0].screenX
   touchendY = e.changedTouches[0].screenY
-  handleGesture()
+  touchControls()
 })
 
 function keyboardControls (e) {
