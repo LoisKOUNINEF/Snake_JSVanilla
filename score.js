@@ -31,6 +31,13 @@ function currentScoreConfig() {
   }
 }
 
+function increaseSpeed() {
+    if (scoreCount === 10) {
+    snakeSpeed += 2
+    scoreCount = 0
+  }
+}
+
 function score() {
   currentScore ++
   scoreCount ++
@@ -40,10 +47,7 @@ function score() {
   currentScoreConfig()
   bestScoreConfig()
   localStorage.setItem("bestScore", JSON.stringify(currentBest))
-  if (scoreCount === 10) {
-    snakeSpeed += 2
-    scoreCount = 0
-  }
+  increaseSpeed()
 }
 
 bestScoreConfig()
