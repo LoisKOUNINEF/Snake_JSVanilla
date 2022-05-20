@@ -5,7 +5,7 @@ const bestScoreDisplay = document.getElementById('best-score')
 
 let currentScore = 0;
 let scoreCount = 0;
-let currentBest = localStorage.bestScore ? JSON.parse(localStorage.bestScore) : 0
+let currentBest = localStorage.bestSnakeScore ? JSON.parse(localStorage.bestSnakeScore) : 0
 
 function bestScoreConfig() {
   if (currentBest < 10) {
@@ -46,7 +46,7 @@ function score() {
   }
   currentScoreConfig()
   bestScoreConfig()
-  localStorage.setItem("bestScore", JSON.stringify(currentBest))
+  localStorage.setItem("bestSnakeScore", JSON.stringify(currentBest))
   increaseSpeed()
 }
 
