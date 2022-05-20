@@ -38,5 +38,5 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-inline: auto;
-  width: min(90%, 80rem);
+  width: min(100%, 80rem);
 }
