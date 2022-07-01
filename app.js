@@ -30,8 +30,12 @@ import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollis
   }
 
   function submitScore(score) {
-    let userEmail = prompt("Enter your shaRcade email to send your score !");
+    let userEmail = localStorage.sharcademail
+    ? JSON.parse(localStorage.sharcademail)
+    : prompt("Enter your shaRcade email to send your score !");
+
     if (userEmail) {
+      localStorage.setItem("sharcademail", JSON.stringify(userEmail))
       const data = {
         "score_token" : {
           "hi-score" : score,
