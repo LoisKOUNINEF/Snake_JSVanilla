@@ -1,5 +1,4 @@
-import { update as updateSnake, render as renderSnake,
-  getSnakeHead, snakeCollision } from './snake.js'
+import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollision } from './snake.js'
   import { update as updateFood, render as renderFood } from './food.js'
   import { snakeSpeed } from './score.js'
   import { outsideGrid } from './grid.js'
@@ -10,7 +9,7 @@ import { update as updateSnake, render as renderSnake,
 
   function main(currentTime) {
     if (gameOver) {
-      if (confirm('Do you want to send your score ?')) {
+      if (confirm('Do you want to send your score to shaRcade amazing platform ?')) {
         submitScore(score);
       }
       if (confirm('You lost. Press OK to retry !')) {
