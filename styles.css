@@ -18,21 +18,19 @@ body {
 }
 
 #game-board {
-background-color: #96b40f;
-/*z-index: 2;*/
-border-radius: 2rem;
-border: 5rem solid #606c78;
-width: 80vmin;
-height: 80vmin;
-display: grid;
-grid-template-rows: repeat(21, 1fr);
-grid-template-columns: repeat(21, 1fr);
-/*margin-bottom: 1em;*/
+  justify-self: center;
+  background-color: #96b40f;
+  border-radius: 2rem;
+  border: 5rem solid #606c78;
+  width: 80vmin;
+  height: 80vmin;
+  display: grid;
+  grid-template-rows: repeat(21, 1fr);
+  grid-template-columns: repeat(21, 1fr);
 }
 
 .snake {
-  background-color: #2d5f2d;
-  /*border: .25vmin solid black;*/
+  background-color:#2d5f2d;
 }
 
 
@@ -51,7 +49,6 @@ grid-template-columns: repeat(21, 1fr);
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   margin: auto;
   z-index: 2;
 }
