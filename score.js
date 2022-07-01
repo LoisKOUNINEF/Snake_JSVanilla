@@ -32,7 +32,7 @@ function currentScoreConfig() {
 }
 
 function increaseSpeed() {
-    if (scoreCount === 10) {
+  if (scoreCount === 10) {
     snakeSpeed += 2
     scoreCount = 0
   }
