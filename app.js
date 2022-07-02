@@ -46,7 +46,7 @@ import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollis
           "user_email" : userEmail
         }
       };
-      fetch(`https://sharcade-front.herokuapp.com/sharcade_api`, {
+      fetch(`https://sharcade.herokuapp.com/sharcade_api`, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json'
