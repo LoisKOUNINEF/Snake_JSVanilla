@@ -46,6 +46,7 @@ function score() {
   }
   currentScoreConfig()
   bestScoreConfig()
+  localStorage.setItem("currentSnakeScore", JSON.stringify(currentScore))
   localStorage.setItem("bestSnakeScore", JSON.stringify(currentBest))
   increaseSpeed()
 }

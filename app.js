@@ -29,7 +29,9 @@ import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollis
     render()
   }
 
-  function submitScore(score) {
+  function submitScore() {
+    let userScore = parseInt(localStorage.currentSnakeScore);
+
     let userEmail = localStorage.sharcadEmail
     ? JSON.parse(localStorage.sharcadEmail)
     : prompt("Enter your shaRcade email to send your score !");
@@ -39,12 +41,12 @@ import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollis
 
       const data = {
         "score_token" : {
-          "hi_score" : score,
+          "hi_score" : userScore,
           "api_key" : "TKPHOpXnusudoO1H",
           "user_email" : userEmail
         }
       };
-      fetch(`https://sharcade.herokuapp.com/sharcade_api`, {
+      fetch(`https://sharcade-front.herokuapp.com/sharcade_api`, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json'
