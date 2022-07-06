@@ -42,7 +42,7 @@ import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollis
       const data = {
         "score_token" : {
           "hi_score" : userScore,
-          "api_key" : "TKPHOpXnusudoO1H",
+          "api_key" : "VByW14pXLvJQyAln",
           "user_email" : userEmail
         }
       };
