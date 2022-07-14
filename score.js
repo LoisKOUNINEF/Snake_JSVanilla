@@ -41,11 +41,22 @@ function increaseSpeed() {
 }
 
 function score() {
-  currentScore += Math.round(snakeSpeed / 2)
   scoreCount ++
-  if (currentScore > currentBest) {
-    currentBest = currentScore
+
+  if ( snakeSpeed <= 8 ) {
+  currentScore += Math.round(snakeSpeed / 2);
   }
+  else if ( snakeSpeed >= 14 ) {
+  currentScore += snakeSpeed;
+  }
+  else {
+    currentScore += Math.round(snakeSpeed / 1.5);
+  }
+
+  if (currentScore > currentBest) {
+    currentBest = currentScore;
+  }
+
   currentScoreConfig()
   bestScoreConfig()
   localStorage.setItem("currentSnakeScore", JSON.stringify(currentScore))
