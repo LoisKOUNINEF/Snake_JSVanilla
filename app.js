@@ -11,7 +11,7 @@ function main(currentTime) {
   if (gameOver) {
     submitScore(score);
     if (confirm('You lost. Press OK to retry !')) {
-      window.location.assign('https://loiskouninef.github.io/Snake_JSVanilla/');
+      window.location.reload();
     }
     return
   };
