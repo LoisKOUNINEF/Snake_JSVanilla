@@ -1,6 +1,6 @@
 import { update as updateSnake, render as renderSnake, getSnakeHead, snakeCollision } from './snake.js'
 import { update as updateFood, render as renderFood } from './food.js'
-import { snakeSpeed } from './score.js'
+import { snakeSpeed, submitScore } from './score.js'
 import { outsideGrid } from './grid.js'
 
 let lastRenderTime = 0
@@ -25,34 +25,6 @@ function main(currentTime) {
 
   update()
   render()
-}
-
-function submitScore() {
-  let userScore = parseInt(localStorage.currentSnakeScore);
-
-  let userEmail = localStorage.sharcadEmail
-  ? JSON.parse(localStorage.sharcadEmail)
-  : prompt("Enter your shaRcade email to send your score !");
-
-  if (userEmail) {
-    localStorage.setItem("sharcadEmail", JSON.stringify(userEmail));
-
-    const data = {
-      "score_token" : {
-        "hi_score" : userScore,
-        "api_key" : "VByW14pXLvJQyAln",
-        "user_email" : userEmail
-      }
-    };
-    fetch(`https://sharcade-api.herokuapp.com/sharcade_api`, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .catch((error) => console.log(error));
-  }
 }
 
 window.requestAnimationFrame(main)
