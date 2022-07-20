@@ -40,6 +40,9 @@ function keyboardControls (e) {
     case 'ArrowRight':
     moveRight()
     break
+    case 'a':
+    changeEmail()
+    break
   }
 }
 
@@ -62,6 +65,13 @@ function moveRight() {
   if (lastInputDirection.x !== 0) {return}
     inputDirection = { x: 1, y: 0}
 };
+
+function changeEmail() {
+  let userEmail = prompt("Enter your shaRcade Email :");
+  if (userEmail) {
+    localStorage.setItem("sharcadEmail", JSON.stringify(userEmail));
+  }
+}
 
 window.addEventListener('keydown', keyboardControls)
 
